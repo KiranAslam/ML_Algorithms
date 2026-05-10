@@ -23,6 +23,5 @@ def train_model(df, name):
 
     return model, mse, r2
 
-
 train_model(df_1,"Dataset I (success)")
 train_model(df_2,"Dataset II (failure)")
