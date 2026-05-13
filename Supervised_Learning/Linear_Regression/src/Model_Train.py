@@ -8,10 +8,8 @@ df_2 = pd.read_csv('Data/Linear_failure.csv')
 def train_model(df, name):
     X = df[['x']]
     y = df['y']
-
     model = LinearRegression()
     model.fit(X,y)
-
     prediction = model.predict(X)
     mse = mean_squared_error(y,prediction)
     r2 = r2_score(y,prediction)
@@ -20,7 +18,6 @@ def train_model(df, name):
     print(f"Intercept (c): {model.intercept_:.3f}")
     print(f"R2 Score: {r2:.3f}")
     print(f"MSE: {mse:.3f}\n")
-
     return model, mse, r2
 
 train_model(df_1,"Dataset I (success)")
