@@ -4,6 +4,8 @@ import pandas as pd
 
 df_1 = pd.read_csv('Data/Linear_success.csv')
 df_2 = pd.read_csv('Data/Linear_failure.csv')
+df_3 = pd.read_csv('Data/The_Outlier_Trick.csv')
+df_4 = pd.read_csv('Data/The-Vertical_Trap.csv')
 
 def train_model(df, name):
     X = df[['x']]
@@ -22,3 +24,5 @@ def train_model(df, name):
 
 train_model(df_1,"Dataset I (success)")
 train_model(df_2,"Dataset II (failure)")
+train_model(df_3,"Dataset III (outlier)")
+train_model(df_4,"Dataset IV (vertical trap)")
