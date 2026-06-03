@@ -1,4 +1,7 @@
-.venv/
+myenv/
+venv/
+ENV/
+env/
 __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
