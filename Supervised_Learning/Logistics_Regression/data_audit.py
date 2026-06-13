@@ -65,14 +65,12 @@ def calculate_woe_iv(data, feature, target, method='cut'):
     
     return grouped['WoE'].to_dict(), grouped['IV'].sum()
 
-# --- Updated Transformation Loop ---
 target_col = 'SeriousDlqin2yrs'
 
-# Dictionary banayein taake har feature ko uska behtar method mile
 features_config = {
     'age': 'cut',
     'RevolvingUtilizationOfUnsecuredLines': 'qcut',
-    'MonthlyIncome': 'qcut',  # Highly skewed features get qcut
+    'MonthlyIncome': 'qcut', 
     'DebtRatio': 'qcut'
 }
 
@@ -87,3 +85,5 @@ for col, method in features_config.items():
         
     df[f'{col}_WoE'] = temp_bins.map(woe_mapping)
     print(f"Feature: {col:35} | Method: {method:5} | IV Score: {feature_iv:.4f}")
+
+df.to_pickle("./Data/cs-training-transformed.pkl")
