@@ -9,7 +9,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("🏦 Enterprise Credit Risk Intelligence System")
+st.title("🏦 Credit Risk Intelligence System")
 
 st.divider()
 @st.cache_resource
