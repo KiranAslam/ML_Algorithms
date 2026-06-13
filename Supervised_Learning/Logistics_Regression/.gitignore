@@ -6,3 +6,6 @@ __pycache__/
 *.py[cod]
 Data/
 !Data/credit_scoring_model.pkl
+Data/*
+
+!Data/credit_scoring_model.pkl
