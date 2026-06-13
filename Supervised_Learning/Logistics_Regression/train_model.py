@@ -59,4 +59,4 @@ print(f"False Negatives (Default predicted Safe): {cm[1][0]} ")
 print(f"True Positives (Default predicted Default): {cm[1][1]}")
 print("="*68)
 import joblib
-joblib.dump(best_model, "./credit_scoring_model.pkl")
+joblib.dump(best_model, "./Data/credit_scoring_model.pkl")
