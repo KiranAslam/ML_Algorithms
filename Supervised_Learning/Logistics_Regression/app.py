@@ -12,12 +12,17 @@ st.set_page_config(
 st.title("🏦 Credit Risk Intelligence System")
 
 st.divider()
+import os
+
 @st.cache_resource
 def load_credit_model():
     try:
-        return joblib.load("./Data/credit_scoring_model.pkl")
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        model_path = os.path.join(BASE_DIR, "Data", "credit_scoring_model.pkl")
+        
+        return joblib.load(model_path)
     except FileNotFoundError:
-        st.error("❌ `credit_scoring_model.pkl` not found in `./Data/` folder! Please run `train_model.py` first to save the model.")
+        st.error("❌ `credit_scoring_model.pkl` not found! System looks at absolute path.")
         return None
 
 model = load_credit_model()
