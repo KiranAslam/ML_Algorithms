@@ -43,7 +43,6 @@ print(df[late_columns].max())
 def calculate_woe_iv(data, feature, target, method='cut'):
     df_temp = data[[feature, target]].copy()
     
-    # Dynamic choice: skewed data ke liye qcut, normal ke liye cut
     if method == 'qcut':
         df_temp['bin'] = pd.qcut(df_temp[feature], q=5, duplicates='drop', labels=False)
     else:
