@@ -11,7 +11,6 @@ print(df.describe())
 df.drop(columns=['Unnamed: 0'], inplace=True)
 print(df.info())
 
-
 inc_median= df["MonthlyIncome"].median()
 df["MonthlyIncome"] = df["MonthlyIncome"].fillna(inc_median)
 num_dep_median = df["NumberOfDependents"].median()
@@ -25,12 +24,9 @@ late_columns = [
 for col in late_columns:
     col_mode = df[col].mode()[0] 
     df[col] = np.where(df[col] > 90, col_mode, df[col]) 
-
-
 for col in late_columns:
     col_mode = df[col].mode()[0] 
     df[col] = np.where(df[col] > 90, col_mode, df[col]) 
-
 
 df['RevolvingUtilizationOfUnsecuredLines'] = np.where(
     df['RevolvingUtilizationOfUnsecuredLines'] > 1.0, 
@@ -72,7 +68,6 @@ features_config = {
     'MonthlyIncome': 'qcut', 
     'DebtRatio': 'qcut'
 }
-
 print("--- FINAL OPTIMIZED WoE & IV REPORT ---")
 for col, method in features_config.items():
     woe_mapping, feature_iv = calculate_woe_iv(df, col, target_col, method=method)
