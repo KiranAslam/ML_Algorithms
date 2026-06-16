@@ -15,13 +15,10 @@ features =  [
 
 X = df[features]
 Y= df["SeriousDlqin2yrs"]
-
 x_train, x_test, y_train, y_test= train_test_split(
     X,Y,test_size=0.2,random_state=42,stratify=Y)
-
 smote = SMOTE(random_state=42,sampling_strategy=0.3)
 x_train_res,y_train_res = smote.fit_resample(x_train,y_train)
-
 model = LogisticRegression(max_iter=1000, random_state=42)
 param_grid = {
     'C': [0.001, 0.01, 0.1, 1.0, 10.0],
