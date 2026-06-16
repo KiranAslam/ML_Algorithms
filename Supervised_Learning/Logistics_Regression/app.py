@@ -50,7 +50,6 @@ st.sidebar.caption(f"• If Risk Probability ≤ {custom_threshold*100:.0f}% ➔
 
 
 st.subheader("👤 Applicant Demographics & Financial Parameters")
-
 with st.form("credit_evaluation_form"):
     col1, col2 = st.columns(2)
     
@@ -114,7 +113,6 @@ with st.form("credit_evaluation_form"):
             calculated_probability = model.predict_proba(input_vector)[0][1]
 
         m_col1, m_col2 = st.columns(2)
-        
         with m_col1:
             st.metric(
                 label="Calculated Default Probability Score", 
@@ -128,7 +126,6 @@ with st.form("credit_evaluation_form"):
                 st.error("🚨 STATUS: APPLICATION REJECTED (High Credit Defaulter Risk)")
             else:
                 st.success("✅ STATUS: APPLICATION APPROVED (Safe Risk Criteria Profile)")
-
         with st.expander("🔎 View Internal Feature Processing State (WoE Vectors)"):
             st.json({
                 "Mapped Age WoE": age_WoE,
