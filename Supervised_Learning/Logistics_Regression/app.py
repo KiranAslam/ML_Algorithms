@@ -50,7 +50,6 @@ st.sidebar.caption(f"• If Risk Probability ≤ {custom_threshold*100:.0f}% ➔
 st.subheader("👤 Applicant Demographics & Financial Parameters")
 with st.form("credit_evaluation_form"):
     col1, col2 = st.columns(2)
-    
     with col1:
         st.markdown("### 📊 Continuous Demographics & Ratios")
         age = st.number_input("Age of Applicant (Years)", min_value=18, max_value=100, value=35, step=1)
