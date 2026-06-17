@@ -30,19 +30,16 @@ grid_search = GridSearchCV(
     cv=5, 
     scoring='roc_auc', 
     n_jobs=-1)
-
 grid_search.fit(x_train_res,y_train_res)
 best_model = grid_search.best_estimator_
 prediction = best_model.predict(x_test)
 prob = best_model.predict_proba(x_test)[:, 1]
-
 for threshold in [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]:
     y_pred_custom = np.where(prob > threshold, 1, 0)
     print(f"\n--- Results for Cutoff Threshold: {threshold} ---")
     print(f"ROC-AUC: {roc_auc_score(y_test,prob):.4f}")
     report = classification_report(y_test, y_pred_custom, output_dict=True)
     print(f"Class 1 (Default) -> Precision: {report['1']['precision']:.2f} | Recall: {report['1']['recall']:.2f}")
-
 print("Classification report")
 print(classification_report(y_test,prediction))
 print("-"*50)
