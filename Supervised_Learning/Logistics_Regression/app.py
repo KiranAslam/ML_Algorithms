@@ -47,8 +47,6 @@ st.sidebar.divider()
 st.sidebar.write(f"**Current Rule Matrix:**")
 st.sidebar.caption(f"• If Risk Probability > {custom_threshold*100:.0f}% ➔ **REJECT**")
 st.sidebar.caption(f"• If Risk Probability ≤ {custom_threshold*100:.0f}% ➔ **APPROVE**")
-
-
 st.subheader("👤 Applicant Demographics & Financial Parameters")
 with st.form("credit_evaluation_form"):
     col1, col2 = st.columns(2)
