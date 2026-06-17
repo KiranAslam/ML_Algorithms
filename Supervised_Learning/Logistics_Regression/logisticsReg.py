@@ -6,7 +6,6 @@ df = pd.read_csv("./Iris.csv")
 df = df[df["Species"] != "Iris-setosa"]
 #print(df.isnull().sum())
 df["Species"] = df["Species"].map({'Iris-versicolor': 0, 'Iris-virginica': 1})
-
 from sklearn.model_selection import train_test_split
 X=df.iloc[:,:-1]
 y=df.iloc[:,-1]
