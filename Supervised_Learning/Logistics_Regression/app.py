@@ -57,7 +57,7 @@ with st.form("credit_evaluation_form"):
         monthly_income = st.number_input("Monthly Income ($)", min_value=0, value=5400, step=100)
         debt_ratio = st.number_input("Debt Ratio (Monthly Debt / Gross Income)", min_value=0.0, value=0.35, step=0.01)
         utilization = st.number_input("Revolving Credit Line Utilization (0.0 - 2.0+)", min_value=0.0, value=0.25, step=0.05)
-        
+   
     with col2:
         st.markdown("### 🚨 Historical Delinquency Counts")
         past_due_30_59 = st.number_input("Times 30-59 Days Past Due (No Worse)", min_value=0, max_value=20, value=0, step=1)
