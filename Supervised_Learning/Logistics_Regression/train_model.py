@@ -44,7 +44,6 @@ print("Classification report")
 print(classification_report(y_test,prediction))
 print("-"*50)
 print(f"ROC-AUC Performance Score: {roc_auc_score(y_test, prob):.4f}")
-
 print("\n[Confusion Matrix]:")
 cm = confusion_matrix(y_test, prediction)
 print(f"True Negatives (Safe predicted Safe): {cm[0][0]}")
