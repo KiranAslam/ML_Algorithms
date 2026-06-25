@@ -10,7 +10,6 @@ print(df.describe())
 #print(df.isnull().sum())
 df.drop(columns=['Unnamed: 0'], inplace=True)
 print(df.info())
-
 inc_median= df["MonthlyIncome"].median()
 df["MonthlyIncome"] = df["MonthlyIncome"].fillna(inc_median)
 num_dep_median = df["NumberOfDependents"].median()
