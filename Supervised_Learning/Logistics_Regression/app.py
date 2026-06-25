@@ -28,10 +28,8 @@ age_woe_map = {0: 0.35, 1: 0.15, 2: -0.05, 3: -0.25, 4: -0.45}
 util_woe_map = {0: -1.05, 1: -0.55, 2: 0.15, 3: 0.85, 4: 1.45}
 income_woe_map = {0: 0.25, 1: 0.08, 2: -0.03, 3: -0.15, 4: -0.32}
 debt_woe_map = {0: -0.12, 1: -0.02, 2: 0.05, 3: 0.18, 4: 0.38}
-
 st.sidebar.header("⚙️ Risk Management Policy")
 st.sidebar.markdown("Adjust the risk profile cutoff to simulation-match the bank's lending style.")
-
 custom_threshold = st.sidebar.slider(
     "Decision Cutoff Threshold", 
     min_value=0.20, 
