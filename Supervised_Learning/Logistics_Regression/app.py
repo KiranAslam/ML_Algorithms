@@ -10,7 +10,6 @@ st.set_page_config(
 )
 
 st.title("🏦 Credit Risk Intelligence System")
-
 st.divider()
 import os
 
@@ -24,9 +23,7 @@ def load_credit_model():
     except FileNotFoundError:
         st.error("❌ `credit_scoring_model.pkl` not found! System looks at absolute path.")
         return None
-
 model = load_credit_model()
-
 age_woe_map = {0: 0.35, 1: 0.15, 2: -0.05, 3: -0.25, 4: -0.45}
 util_woe_map = {0: -1.05, 1: -0.55, 2: 0.15, 3: 0.85, 4: 1.45}
 income_woe_map = {0: 0.25, 1: 0.08, 2: -0.03, 3: -0.15, 4: -0.32}
