@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-
 df = pd.read_csv("./Iris.csv")
 #print(df.head(10))
 df = df[df["Species"] != "Iris-setosa"]
